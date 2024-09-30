@@ -117,7 +117,7 @@
 
                             {% for reply in comment.replies.all %}
                             <div class="quoteWrapper">
-                                <h2>{{ reply.user.first_name }}Salom</h2>
+                                <h2>{{ reply.user.first_name }}</h2>
                                 <p>{{ reply.text }}</p>
                             </div>
                             {% endfor %}
