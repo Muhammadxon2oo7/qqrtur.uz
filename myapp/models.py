@@ -37,6 +37,7 @@ class TourismPlace(models.Model):
     duration = models.CharField(max_length=80, null=True)  
     places_count = models.CharField(max_length=80, null=True)
     views = models.PositiveIntegerField(default=0)  
+    phone_number = models.CharField(max_length=20, blank=True, null=True) 
 
     def upload_to(instance, filename):
         return 'tourism_images/{filename}'.format(filename=filename)
@@ -45,6 +46,9 @@ class TourismPlace(models.Model):
 
     def average_rating(self):
         return self.ratings.aggregate(Avg('stars'))['stars__avg'] or 0
+    
+    def rating_count(self):
+        return self.ratings.count()
 
     def __str__(self):
         return self.title
