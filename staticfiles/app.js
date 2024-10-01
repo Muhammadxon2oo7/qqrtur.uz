@@ -1,25 +1,4 @@
 //
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelectorAll(".carousel-slide");
-  const totalSlides = slides.length;
-  let currentSlide = 0;
-
-  function showSlide(index) {
-      const wrapper = document.querySelector(".carousel-wrapper");
-      const slideWidth = slides[0].clientWidth;  // Har bir slaydning kengligini olish
-      wrapper.style.transform = `translateX(${-index * slideWidth}px)`;  // Slaydni siljitish
-  }
-
-  // Har 2 soniyada avtomatik almashish
-  setInterval(function() {
-      currentSlide = (currentSlide + 1) % totalSlides;  // Slaydlar ketma-ket almashadi
-      showSlide(currentSlide);
-  }, 2000); // 2 soniya oralig'ida almashish
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
   const cards = document.querySelectorAll('.card');
 
