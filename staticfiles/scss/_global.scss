@@ -176,17 +176,6 @@ a{
 :root {
     --m: 4rem;
   }
-
-  button {
-    background-color: #000;
-    font-size: calc(0.4 * var(--m));
-    border: none;
-    color: #e5e5e5;
-    font-family: "IBM Plex Sans";
-    font-weight: 400;
-    padding: calc(0.35 * var(--m)) calc(0.8 * var(--m));
-    border-radius: calc(0.3 * var(--m));
-  }
   
   footer {
 
@@ -273,13 +262,12 @@ a{
     text-decoration: none;
     color: inherit;
   }
-  
+
   .link {
     width: calc(0.8 * var(--m));
     height: calc(0.8 * var(--m));
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: calc(0.1 * var(--m));
-  
     display: flex;
     justify-content: center;
     align-items: center;

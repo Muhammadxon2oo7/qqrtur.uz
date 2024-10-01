@@ -34,32 +34,32 @@
         1px 22px 10px rgba(16,16,16,0.2),
         1px 25px 35px rgba(16,16,16,0.2),
         1px 30px 60px rgba(16,16,16,0.4);
-            .spantxt{
-                display: none;
-                    width: 100%;
-                    text-align: center;
-                    font-size: 18px;
-                    display: flex;
-                    justify-content: center;
-                    color: #EECD86;
-                    z-index: 10;
-                    position: relative;
-                    text-shadow:1px solid red;
-                    text-shadow: 1px 1px 1px #919191,
-                    1px 2px 1px #fff,
-                    1px 3px 1px #403e3d,
-                    1px 4px 1px #473727,
-                    1px 5px 1px #473727,
-                    1px 6px 1px #473727,
-                   
-                    1px 9px 1px #473727,
-                    1px 10px 1px #919191,
-                1px 18px 6px rgba(16,16,16,0.4),
-                1px 22px 10px rgba(16,16,16,0.2),
-                1px 25px 35px rgba(16,16,16,0.2),
-                1px 30px 60px rgba(16,16,16,0.4);
-            }
+            
         }
+        .spantxt{
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            color: #EECD86;
+            z-index: 10;
+            position: relative;
+            text-shadow:1px solid red;
+            text-shadow: 1px 1px 1px #919191,
+            1px 2px 1px #fff,
+            1px 3px 1px #403e3d,
+            1px 4px 1px #473727,
+            1px 5px 1px #473727,
+            1px 6px 1px #473727,
+           
+            1px 9px 1px #473727,
+            1px 10px 1px #919191,
+        1px 18px 6px rgba(16,16,16,0.4),
+        1px 22px 10px rgba(16,16,16,0.2),
+        1px 25px 35px rgba(16,16,16,0.2),
+        1px 30px 60px rgba(16,16,16,0.4);
+    }
 
     }
     
@@ -107,10 +107,11 @@
                     //     border-radius: 12px;
                     // }
                     
-                }.spantxt{
+                }
+                .spantxt{
                     width: 100%;
                     text-align: center;
-                    font-size: 42px;
+                    font-size: 32px;
                     display: flex;
                     justify-content: center;
                     color: #EECD86;

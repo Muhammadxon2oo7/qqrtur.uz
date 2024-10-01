@@ -103,7 +103,8 @@
                     {% for comment in comments %}
                     <li class="{% if comment.user == request.user %}bright{% else %}bleft{% endif %}">
                         <div class="comment__text__wrapper ">
-                            <div
+                            <div class="allcomment__wrapper">
+                                <div
                                 class="comment__buble {% if comment.user == request.user %}right{% else %}left{% endif %}">
 
                                 {% for i in ratings_dict %}
@@ -121,6 +122,7 @@
                                 <p>{{ reply.text }}</p>
                             </div>
                             {% endfor %}
+                            </div>
                         </div>
                     </li>
                     {% empty %}

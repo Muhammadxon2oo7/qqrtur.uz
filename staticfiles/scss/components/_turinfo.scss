@@ -173,124 +173,132 @@
 
                         // border-radius: 7px;
                         // background-color: green;
-                        .comment__buble {
-                            --r: 1em;
-                            /* the radius */
-                            --t: 1.5em;
-                            /* the size of the tail */
-                            max-width: 300px;
-                            //    max-width: 80%;
-                            //     min-width:90px;
-                            //     min-height: 40px;
-                            //     max-height: fit-content;
-                            padding: 1em;
-                            padding-right: 5px;
-                            border-inline: var(--t) solid #0000;
-                            border-radius: calc(var(--r) + var(--t))/var(--r);
-                            mask:
-                                radial-gradient(100% 100% at var(--_p) 0, #0000 99%, #000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
-                                linear-gradient(#000 0 0) padding-box;
-                            background: #9bbad3;
-                            color: #fff;
-
-                            .comment__text {
-                                overflow: hidden;
+                        .allcomment__wrapper{
+                            width: auto;
+                            height: auto;
+                            background-color: red;
+                            
+                            .comment__buble {
+                                --r: 1em;
+                                /* the radius */
+                                --t: 1.5em;
+                                /* the size of the tail */
+                                max-width: 300px;
+                                //    max-width: 80%;
+                                //     min-width:90px;
+                                //     min-height: 40px;
+                                //     max-height: fit-content;
+                                padding: 1em;
+                                padding-right: 5px;
+                                border-inline: var(--t) solid #0000;
+                                border-radius: calc(var(--r) + var(--t))/var(--r);
+                                mask:
+                                    radial-gradient(100% 100% at var(--_p) 0, #0000 99%, #000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
+                                    linear-gradient(#000 0 0) padding-box;
+                                background: #9bbad3;
+                                color: #fff;
+    
+                                .comment__text {
+                                    overflow: hidden;
+                                }
+                                .replybtn{
+                                    all: unset;
+                                    width: auto;
+                                    height: auto;
+                                    background-color: transparent;
+                                    cursor: pointer;
+                                    // border-bottom: 2px double  black;
+                                }
                             }
-                            .replybtn{
-                                all: unset;
+    
+                            .left {
+                                --_p: 0;
+                                border-bottom-left-radius: 0 0;
+                                place-self: start;
+                            }
+    
+                            .right {
+                                --_p: 100%;
+                                border-bottom-right-radius: 0 0;
+                                place-self: end;
+                                margin-bottom: 10px;
+                            }
+    
+                            .quoteWrapper {
+                                position: relative;
+                                max-width: 300px;
                                 width: auto;
+                                
+                                // margin: auto;
                                 height: auto;
                                 background-color: transparent;
-                                cursor: pointer;
-                                // border-bottom: 2px double  black;
+                                background-image: linear-gradient(-45deg,
+                                        transparent,
+                                        transparent 2%,
+                                        white 2%,
+                                        white 85%,
+                                        transparent,
+                                        85%,
+                                        transparent),
+                                    linear-gradient(to bottom right, #2ad, #2ad 90%, transparent 90%);
+                                background-position: top left, 0.2em 0.2em;
+                                background-repeat: no-repeat;
+                                filter: drop-shadow(0 0 15px #0005);
+                                margin-bottom: 15px;
+                                top: 0;
+                                h2{
+                                    font-weight: 5;
+                                    text-align: center;
+                                }
+                                p{  
+                                    width: 80%;
+                                    padding-left: 10px;
+                                    text-align: center;
+                                    margin: 0 auto;
+    
+                                }
                             }
-                        }
-
-                        .left {
-                            --_p: 0;
-                            border-bottom-left-radius: 0 0;
-                            place-self: start;
-                        }
-
-                        .right {
-                            --_p: 100%;
-                            border-bottom-right-radius: 0 0;
-                            place-self: end;
-                            margin-bottom: 10px;
-                        }
-
-                        .quoteWrapper {
-                            position: relative;
-                            max-width: 300px;
-                            width: auto;
-                            // margin: auto;
-                            height: auto;
-                            background-color: transparent;
-                            background-image: linear-gradient(-45deg,
-                                    transparent,
-                                    transparent 2%,
-                                    white 2%,
-                                    white 85%,
-                                    transparent,
-                                    85%,
-                                    transparent),
-                                linear-gradient(to bottom right, #2ad, #2ad 90%, transparent 90%);
-                            background-position: top left, 0.2em 0.2em;
-                            background-repeat: no-repeat;
-                            filter: drop-shadow(0 0 15px #0005);
-                            margin-bottom: 15px;
-                            h2{
-                                font-weight: 5;
-                                text-align: center;
+    
+                            .quoteWrapper::before,
+                            .quoteWrapper::after {
+                                position: absolute;
+                                
+                                z-index: -1;
+                                display: block;
+                                width: 30px;
+                                height: 20px;
+                                content: "";
+                                z-index: 0;
+                                font-size: 50px;
+                                font-family: Georgia, Times, Garamond, serif;
                             }
-                            p{
-                                width: 80%;
-                                padding-left: 10px;
-                                text-align: center;
-                                margin: 0 auto;
-
+    
+                            .quoteWrapper::before {
+                                top:15px;
+                                left: 10px;
+                                content: open-quote;
                             }
-                        }
-
-                        .quoteWrapper::before,
-                        .quoteWrapper::after {
-                            position: absolute;
-                            
-                            z-index: -1;
-                            display: block;
-                            width: 30px;
-                            height: 20px;
-                            content: "";
-                            z-index: 0;
-                            font-size: 50px;
-                            font-family: Georgia, Times, Garamond, serif;
-                        }
-
-                        .quoteWrapper::before {
-                            top:15px;
-                            left: 10px;
-                            content: open-quote;
-                        }
-
-                        .quoteWrapper::after {
-                            bottom: -1px;
-                            right: -5px;
-                            content: close-quote;
-                        }
-
-                        .quoteWrapper::before,
-                        .quoteWrapper::after,
-                        .quoteWrapper h2 {
-                            text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
-                        }
-
-                        .quoteWrapper h2 {
-                            margin-block-end: 1rem;
-                        }
-
-                        .quoteWrapper p {
-                            margin-block-start: 1rem;
-                            text-indent: 2ch;
+    
+                            .quoteWrapper::after {
+                                bottom: -1px;
+                                right: -5px;
+                                content: close-quote;
+                            }
+    
+                            .quoteWrapper::before,
+                            .quoteWrapper::after,
+                            .quoteWrapper h2 {
+                                text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
+                            }
+    
+                            .quoteWrapper h2 {
+                                margin-block-end: 1rem;
+                            }
+    
+                            .quoteWrapper p {
+                                margin-block-start: 1rem;
+                                text-indent: 2ch;
+                            }
                         }
 
                     }

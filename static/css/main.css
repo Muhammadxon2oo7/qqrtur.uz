@@ -210,17 +210,6 @@ a {
   --m: 4rem;
 }
 
-button {
-  background-color: #000;
-  font-size: calc(0.4 * var(--m));
-  border: none;
-  color: #e5e5e5;
-  font-family: "IBM Plex Sans";
-  font-weight: 400;
-  padding: calc(0.35 * var(--m)) calc(0.8 * var(--m));
-  border-radius: calc(0.3 * var(--m));
-}
-
 footer {
   z-index: 500;
   width: 100%;
@@ -551,6 +540,7 @@ header .container .navlang .display ul .username {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: auto;
   }
   header .container .navlang .nav__Wrapper {
     display: block;
@@ -715,8 +705,7 @@ header .container .navlang .display ul .username {
   color: #c9c8c8;
   text-shadow: 1px 1px 1px #919191, 1px 2px 1px #fff, 1px 3px 1px #403e3d, 1px 4px 1px #473727, 1px 5px 1px #473727, 1px 6px 1px #473727, 1px 9px 1px #473727, 1px 10px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
 }
-.banner .container .bannertxt .spantxt {
-  display: none;
+.banner .container .spantxt {
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -763,7 +752,7 @@ header .container .navlang .display ul .username {
   .banner .container div .spantxt {
     width: 100%;
     text-align: center;
-    font-size: 42px;
+    font-size: 32px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1615,7 +1604,12 @@ hr {
 .turinfo .container .containerform ul li .comment__text__wrapper {
   margin-bottom: 10px;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .comment__buble {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper {
+  width: auto;
+  height: auto;
+  background-color: red;
+}
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .comment__buble {
   --r: 1em;
   /* the radius */
   --t: 1.5em;
@@ -1632,28 +1626,28 @@ hr {
   background: #9bbad3;
   color: #fff;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .comment__buble .comment__text {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .comment__buble .comment__text {
   overflow: hidden;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .comment__buble .replybtn {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .comment__buble .replybtn {
   all: unset;
   width: auto;
   height: auto;
   background-color: transparent;
   cursor: pointer;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .left {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .left {
   --_p: 0;
   border-bottom-left-radius: 0 0;
   place-self: start;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .right {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .right {
   --_p: 100%;
   border-bottom-right-radius: 0 0;
   place-self: end;
   margin-bottom: 10px;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper {
   position: relative;
   max-width: 300px;
   width: auto;
@@ -1665,19 +1659,20 @@ hr {
   -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3333333333));
           filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3333333333));
   margin-bottom: 15px;
+  top: 0;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper h2 {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper h2 {
   font-weight: 5;
   text-align: center;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper p {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper p {
   width: 80%;
   padding-left: 10px;
   text-align: center;
   margin: 0 auto;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper::before,
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper::after {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::before,
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::after {
   position: absolute;
   z-index: -1;
   display: block;
@@ -1688,26 +1683,26 @@ hr {
   font-size: 50px;
   font-family: Georgia, Times, Garamond, serif;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper::before {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::before {
   top: 15px;
   left: 10px;
   content: open-quote;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper::after {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::after {
   bottom: -1px;
   right: -5px;
   content: close-quote;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper::before,
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper::after,
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper h2 {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::before,
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::after,
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper h2 {
   text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper h2 {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper h2 {
   -webkit-margin-after: 1rem;
           margin-block-end: 1rem;
 }
-.turinfo .container .containerform ul li .comment__text__wrapper .quoteWrapper p {
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper p {
   -webkit-margin-before: 1rem;
           margin-block-start: 1rem;
   text-indent: 2ch;
