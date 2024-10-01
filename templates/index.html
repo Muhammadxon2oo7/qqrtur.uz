@@ -5,6 +5,36 @@
 {% block content %}
 
 <!-- new main -->
+<style>
+    /* Karuselning asosiy tuzilmasi */
+.carousel-container {
+    position: relative;
+    inset: 0;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+
+}
+
+.carousel-wrapper {
+    display: flex;
+    height: 300px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.carousel-image {
+    max-width: 100%; /* Rasm kengligi konteynerni to'liq qoplaydi */
+    max-height: 100%; /* Rasm balandligi konteyner balandligiga sig'adi */
+    object-fit: fill;
+    display: block;
+}
+</style>
 <main>
     <section class="banner" id="first-section">
         <div class="container">
@@ -259,27 +289,67 @@
             <div class="content">
                 <div class="cards__wrapper">
                     {% for place in places %}
+    <div class="cardd">
+        <a href="{% url 'turinfo' place.id %}">
+            <!-- Karusel tuzilishi -->
+            <!-- Karusel tuzilishi -->
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    {% for image in place.images.all %}
+                    <div class="carousel-slide">
+                        
+                        <img  class="carousel-image" src="{{ image.image.url }}" alt="">
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="info">
+                <h2 class="title">{{ place.title }}</h2>
+                <p style="display: flex; align-items: center;">
+                    <img style="width: 20px; height: 20px; margin-right: 5px;" src="{% static 'img/turinfo/star.png' %}" alt="">
+                    {{ place.average_rating }} ({{ place.rating_count }} ovoz)
+                </p>
+                <br>
+                <p class="dec">{{ place.text }}</p>
+            </div>
+            
+            <button class="apply__btn" style="display: flex; align-items: center; justify-content: center;">
+                <a href="tel:+998971971283">
+                    <img src="{% static 'img/applytur.png' %}" alt="">
+                </a>
+            </button>
+        </a>
+    </div>
+{% endfor %}
+
+
+
+                    <!-- {% for place in places %}
                     <div class="card">
                         <a href="{% url 'turinfo' place.id %}">
-                            <div class="swiper mySwiper" loop="true">
-                                <div class="swiper-wrapper" loop="true">
-                                    {% for image in place.images.all %}
-
-                                    <img style="width: 300px; height: 300px; object-fit: cover;" class="swiper-slide"
-                                        src="{{ image.image.url }}" alt="">
-
-                                    {% endfor %}
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-
+                           
+                        <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
+                            effect="fade" loop="true" autoplay-delay="2500" autoplay-disable-on-interaction="false"
+                            mousewheel="true" navigation="true">
+                            {% for image in place.images.all %}
+                            <swiper-slide>
+            
+            
+                                <img class="swiperr-slide" src="{{ image.image.url }}" alt="">
+            
+            
+                            </swiper-slide> 
+                            {% endfor %}
+            
+                        </swiper-container>
 
                             <div class="info">
                                 <h2 class="title">{{ place.title }}</h2>
-                                <p>O'rtacha yulduzlar: {{ place.average_rating }}⭐</p>
-                                <p>Reyting berganlar soni: {{ place.rating_count }}👤</p>
+                                <p style="display: flex;
+                                align-items: center;"><img style="width: 20px; height: 20px; margin-right: 5px;" src="{% static 'img/turinfo/star.png' %}" alt="">{{ place.average_rating }} ({{ place.rating_count }} ovoz)</p>
+                               
                                 <br>
                                 <p class="dec">{{ place.text }}</p>
                             </div>
@@ -291,12 +361,33 @@
                             </button>
                         </a>
                     </div>
-                    {% endfor %}
+                    {% endfor %} -->
                 </div>
             </div>
         </div>
     </section>
 </main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const wrapper = document.querySelector(".carousel-wrapper");
+    const slides = document.querySelectorAll(".carousel-slide");
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const slideWidth = slides[0].clientWidth;  // Har bir slaydning kengligini olish
+        wrapper.style.transform = `translateX(${-index * slideWidth}px)`;  // Slaydni siljitish
+    }
+
+    // Har 2 soniyada avtomatik almashish
+    setInterval(function() {
+        currentSlide = (currentSlide + 1) % totalSlides;  // Slaydlar ketma-ket almashadi
+        showSlide(currentSlide);
+    }, 2000); // 2 soniya oralig'ida almashish
+});
+
+</script>
 <script src="{% static 'app.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 {% endblock %}

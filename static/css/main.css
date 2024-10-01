@@ -1262,7 +1262,7 @@ hr {
   grid-template-columns: 1fr;
   gap: 15px;
 }
-.pakets .container .content .cards__wrapper .card {
+.pakets .container .content .cards__wrapper .cardd {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1274,16 +1274,16 @@ hr {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border-radius: 10px;
+  overflow: hidden;
 }
-.pakets .container .content .cards__wrapper .card img {
+.pakets .container .content .cards__wrapper .cardd img {
   width: 100%;
-  height: 150px;
-  border-radius: 10px 0 0 10px;
+  height: 300px;
 }
-.pakets .container .content .cards__wrapper .card .info {
+.pakets .container .content .cards__wrapper .cardd .info {
   padding: 5px;
 }
-.pakets .container .content .cards__wrapper .card .info .title {
+.pakets .container .content .cards__wrapper .cardd .info .title {
   font-size: 18px;
   text-align: left;
   margin: 0;
@@ -1297,23 +1297,23 @@ hr {
   margin-bottom: 6px;
   color: #fff;
 }
-.pakets .container .content .cards__wrapper .card .info p {
+.pakets .container .content .cards__wrapper .cardd .info p {
   text-align: center;
   font-size: 13px;
   color: #ffffff;
 }
-.pakets .container .content .cards__wrapper .card .apply__btn {
+.pakets .container .content .cards__wrapper .cardd .apply__btn {
   width: 100%;
   height: 60px;
   background-color: dodgerblue;
   border: none;
   cursor: pointer;
 }
-.pakets .container .content .cards__wrapper .card .apply__btn img {
+.pakets .container .content .cards__wrapper .cardd .apply__btn img {
   width: 30px;
   height: 30px;
 }
-.pakets .container .content .cards__wrapper .card:hover {
+.pakets .container .content .cards__wrapper .cardd:hover {
   -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
 }
@@ -1323,9 +1323,6 @@ hr {
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-  .pakets .container {
-    width: 100%;
   }
   .pakets .container .title {
     display: -webkit-box;
@@ -1364,7 +1361,7 @@ hr {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  .pakets .container .content .cards__wrapper .card {
+  .pakets .container .content .cards__wrapper .cardd {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1375,14 +1372,16 @@ hr {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     border-radius: 10px;
+    overflow: hidden;
   }
-  .pakets .container .content .cards__wrapper .card .swiper-slide-active, .pakets .container .content .cards__wrapper .card .swiper-wrapper {
-    width: 500px;
+  .pakets .container .content .cards__wrapper .cardd img {
+    width: 100%;
+    height: 100%;
   }
-  .pakets .container .content .cards__wrapper .card .info {
+  .pakets .container .content .cards__wrapper .cardd .info {
     padding: 10px;
   }
-  .pakets .container .content .cards__wrapper .card .info .title {
+  .pakets .container .content .cards__wrapper .cardd .info .title {
     all: unset;
     font-size: 18px;
     text-align: left;
@@ -1397,13 +1396,13 @@ hr {
     margin-bottom: 6px;
     color: #000;
   }
-  .pakets .container .content .cards__wrapper .card .info p {
+  .pakets .container .content .cards__wrapper .cardd .info p {
     font-size: 13px;
     text-align: left;
     padding-right: 5px;
     color: #161515;
   }
-  .pakets .container .content .cards__wrapper .card .apply__btn {
+  .pakets .container .content .cards__wrapper .cardd .apply__btn {
     width: 40px;
     height: 100%;
     background-color: #9BBAD3;
@@ -1411,11 +1410,11 @@ hr {
     cursor: pointer;
     border-radius: 0 10px 10px 0;
   }
-  .pakets .container .content .cards__wrapper .card .apply__btn img {
+  .pakets .container .content .cards__wrapper .cardd .apply__btn img {
     width: 30px;
     height: 30px;
   }
-  .pakets .container .content .cards__wrapper .card:hover {
+  .pakets .container .content .cards__wrapper .cardd:hover {
     -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
     border-bottom: 3px solid #fff;
@@ -1494,18 +1493,24 @@ hr {
   all: unset;
 }
 .turinfo .container .leftcontent .details .more__info .star__panel form {
-  width: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .turinfo .container .leftcontent .details .more__info .star__panel form .rate {
   width: auto;
   height: 46px;
   padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > input {
   position: absolute;
@@ -1521,6 +1526,7 @@ hr {
   color: #ccc;
 }
 .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > label:before {
+  font-size: 20px;
   content: "★ ";
 }
 .turinfo .container .leftcontent .details .more__info .star__panel form .rate > input:checked ~ label {
@@ -1607,7 +1613,6 @@ hr {
 .turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper {
   width: auto;
   height: auto;
-  background-color: red;
 }
 .turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .comment__buble {
   --r: 1em;
@@ -1625,6 +1630,8 @@ hr {
           mask: radial-gradient(100% 100% at var(--_p) 0, rgba(0, 0, 0, 0) 99%, #000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat, linear-gradient(#000 0 0) padding-box;
   background: #9bbad3;
   color: #fff;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .comment__buble .comment__text {
   overflow: hidden;
@@ -1636,6 +1643,12 @@ hr {
   background-color: transparent;
   cursor: pointer;
 }
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .color {
+  background-color: gray;
+}
+.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .color p {
+  color: rgb(217, 209, 209);
+}
 .turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .left {
   --_p: 0;
   border-bottom-left-radius: 0 0;
@@ -1646,66 +1659,6 @@ hr {
   border-bottom-right-radius: 0 0;
   place-self: end;
   margin-bottom: 10px;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper {
-  position: relative;
-  max-width: 300px;
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  background-image: linear-gradient(-45deg, transparent, transparent 2%, white 2%, white 85%, transparent, 85%, transparent), linear-gradient(to bottom right, #2ad, #2ad 90%, transparent 90%);
-  background-position: top left, 0.2em 0.2em;
-  background-repeat: no-repeat;
-  -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3333333333));
-          filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3333333333));
-  margin-bottom: 15px;
-  top: 0;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper h2 {
-  font-weight: 5;
-  text-align: center;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper p {
-  width: 80%;
-  padding-left: 10px;
-  text-align: center;
-  margin: 0 auto;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::before,
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::after {
-  position: absolute;
-  z-index: -1;
-  display: block;
-  width: 30px;
-  height: 20px;
-  content: "";
-  z-index: 0;
-  font-size: 50px;
-  font-family: Georgia, Times, Garamond, serif;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::before {
-  top: 15px;
-  left: 10px;
-  content: open-quote;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::after {
-  bottom: -1px;
-  right: -5px;
-  content: close-quote;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::before,
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper::after,
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper h2 {
-  text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper h2 {
-  -webkit-margin-after: 1rem;
-          margin-block-end: 1rem;
-}
-.turinfo .container .containerform ul li .comment__text__wrapper .allcomment__wrapper .quoteWrapper p {
-  -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
-  text-indent: 2ch;
 }
 .turinfo .container .containerform ul .bright {
   width: auto;
@@ -1837,6 +1790,63 @@ hr {
   .turinfo .container .leftcontent .details .more__info:hover {
     -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel {
+    width: 100%;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel button {
+    all: unset;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate {
+    width: auto;
+    height: 46px;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > label:before {
+    font-size: 25px;
+    content: "★ ";
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate > input:checked ~ label {
+    color: #ffc700;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > label:hover,
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+  }
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate > input:checked + label:hover,
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate > input:checked + label:hover ~ label,
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate > input:checked ~ label:hover,
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate > input:checked ~ label:hover ~ label,
+  .turinfo .container .leftcontent .details .more__info .star__panel form .rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
   }
   .turinfo .container .leftcontent .details .shopbtn {
     all: unset;
